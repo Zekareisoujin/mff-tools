@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container } from '@material-ui/core';
+import { Route, withRouter } from 'react-router-dom';
+import FusionCalc from './screen/FusionCalc';
+import WeaponCalc from './screen/WeaponCalc';
+import Header from './component/Header';
+import _ from 'lodash';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const pageList = {
+  '/fusion': {
+    label: 'Fusion Calculator',
+    component: FusionCalc
+  },
+  '/weapon': {
+    label: 'Weapon Calculator',
+    component: WeaponCalc
+  }
+};
+
+const App = props => {
+  const { location } = props;
+  const [navTitle, setNavTitle] = React.useState(
+    pageList[location.pathname].label
   );
-}
 
-export default App;
+  React.useEffect(() => {
+    setNavTitle(pageList[location.pathname].label);
+  }, [location.pathname]);
+
+  return (
+    <>
+      <Header pageList={pageList} title={navTitle} />
+      <Container maxWidth="md">
+        {_.map(pageList, (page, path) => {
+          return <Route path={path} component={page.component} key={path} />;
+        })}
+      </Container>
+    </>
+  );
+};
+
+export default withRouter(App);
