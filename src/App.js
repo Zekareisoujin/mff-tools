@@ -24,16 +24,10 @@ const pageList = {
 
 const App = props => {
   const { location } = props;
-  const [navTitle, setNavTitle] = React.useState('');
-
-  React.useEffect(() => {
-    if (pageList[location.pathname])
-      setNavTitle(pageList[location.pathname].label);
-  }, [location.pathname]);
 
   return (
     <>
-      <Header pageList={pageList} title={navTitle} />
+      <Header pageList={pageList} />
       <Container maxWidth="md">
         <RouteSwitch>
           <Redirect from="/" exact to="/fusion" />

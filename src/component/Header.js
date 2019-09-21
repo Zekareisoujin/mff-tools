@@ -42,7 +42,9 @@ const Header = props => {
           <IconButton edge="start" color="inherit" onClick={openSideMenu}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6">Mobius FF Tools - {title}</Typography>
+          <Typography variant="h6">
+            Mobius FF Tools{title && ` - ${title}`}
+          </Typography>
         </Toolbar>
       </AppBar>
       <Drawer open={sideMenuOpen} onClose={closeSideMenu}>
