@@ -1,6 +1,11 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
-import { Route, withRouter } from 'react-router-dom';
+import {
+  Route,
+  Switch as RouteSwitch,
+  Redirect,
+  withRouter
+} from 'react-router-dom';
 import FusionCalc from './screen/FusionCalc';
 import WeaponCalc from './screen/WeaponCalc';
 import Header from './component/Header';
@@ -19,21 +24,23 @@ const pageList = {
 
 const App = props => {
   const { location } = props;
-  const [navTitle, setNavTitle] = React.useState(
-    pageList[location.pathname].label
-  );
+  const [navTitle, setNavTitle] = React.useState('');
 
   React.useEffect(() => {
-    setNavTitle(pageList[location.pathname].label);
+    if (pageList[location.pathname])
+      setNavTitle(pageList[location.pathname].label);
   }, [location.pathname]);
 
   return (
     <>
       <Header pageList={pageList} title={navTitle} />
       <Container maxWidth="md">
-        {_.map(pageList, (page, path) => {
-          return <Route path={path} component={page.component} key={path} />;
-        })}
+        <RouteSwitch>
+          <Redirect from="/" exact to="/fusion" />
+          {_.map(pageList, (page, path) => {
+            return <Route path={path} component={page.component} key={path} />;
+          })}
+        </RouteSwitch>
       </Container>
     </>
   );

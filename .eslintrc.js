@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'no-console': 'warn',
     'max-len': [
       'warn',
       {
