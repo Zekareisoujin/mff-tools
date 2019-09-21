@@ -2,6 +2,13 @@ import React from 'react';
 import { FusionControlPanel, FusionRateTable } from '../component';
 import computeFusionTable from '../util/fusionCalc';
 import { abilityType, fusionTable } from '../data/fusionConfig';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  panel: {
+    paddingTop: theme.spacing(3)
+  }
+}));
 
 const defaultOptionState = {
   abilityType: abilityType[0],
@@ -18,6 +25,7 @@ const defaultOptionState = {
 };
 
 const FusionCalculator = props => {
+  const classes = useStyles();
   const [state, setState] = React.useState({ option: defaultOptionState });
 
   const handleOptionChange = optionState => {
@@ -68,10 +76,12 @@ const FusionCalculator = props => {
   return (
     <>
       <FusionControlPanel
+        className={classes.panel}
         defaultState={defaultOptionState}
         onOptionChange={handleOptionChange}
       />
       <FusionRateTable
+        className={classes.panel}
         cardCost={cardCost}
         fodderCost={fodderCost}
         cardRateTable={crossRateTable}

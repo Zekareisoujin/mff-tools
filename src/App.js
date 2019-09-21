@@ -28,7 +28,7 @@ const App = props => {
   return (
     <>
       <Header pageList={pageList} />
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <RouteSwitch>
           <Redirect from="/" exact to="/fusion" />
           {_.map(pageList, (page, path) => {

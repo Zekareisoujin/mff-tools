@@ -18,7 +18,7 @@ const cardOption = {
     },
 
     drop: {
-      rarity: [1, 2, 3, 4, 5],
+      rarity: [1, 2, 3, 4],
       fodderRarity: [1, 2, 3],
       fodder: ['drop']
     },

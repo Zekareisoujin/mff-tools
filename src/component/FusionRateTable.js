@@ -11,6 +11,17 @@ import {
   Typography
 } from '@material-ui/core';
 
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  table: {
+    marginTop: theme.spacing(1)
+  },
+  tableTitle: {
+    paddingLeft: theme.spacing(2)
+  }
+}));
+
 const getBasketContent = (basket, tableRate) => {
   const basketContent = {};
   for (var j = 0; j < basket.length; j++) {
@@ -56,6 +67,7 @@ const FusionRateTable = props => {
     fodderRateTable,
     fodderBaseAbilityLevel
   } = props;
+  const classes = useStyles();
 
   const getTableData = (cardCost, cardRateTable, includeBankCost) => {
     let total = 0,
@@ -101,9 +113,11 @@ const FusionRateTable = props => {
   const cardTableData = getTableData(cardCost, cardRateTable, true);
   const fodderTableData = getTableData(fodderCost, fodderRateTable, false);
   return (
-    <>
-      <Paper>
-        <Typography variant="h6">Card fusion table</Typography>
+    <div className={props.className}>
+      <Paper className={classes.table}>
+        <Typography variant="h6" className={classes.tableTitle}>
+          Card fusion table
+        </Typography>
         <Table>
           <TableHead>
             <TableRow>
@@ -125,8 +139,10 @@ const FusionRateTable = props => {
           </TableBody>
         </Table>
       </Paper>
-      <Paper>
-        <Typography variant="h6">Fodder fusion table</Typography>
+      <Paper className={classes.table}>
+        <Typography variant="h6" className={classes.tableTitle}>
+          Fodder fusion table
+        </Typography>
         <Table>
           <TableHead>
             <TableRow>
@@ -147,7 +163,7 @@ const FusionRateTable = props => {
           </TableBody>
         </Table>
       </Paper>
-    </>
+    </div>
   );
 };
 
