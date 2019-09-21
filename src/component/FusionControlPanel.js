@@ -61,7 +61,7 @@ const FusionControlPanel = props => {
 
   const specialOption = (
     <FormControl>
-      <FormLabel>Special Options</FormLabel>
+      <FormLabel focused={false}>Special Options</FormLabel>
       <FormGroup row>
         {otherOption.map((value, index) => {
           return (
@@ -84,7 +84,7 @@ const FusionControlPanel = props => {
 
   const abilityTypeOption = (
     <FormControl>
-      <FormLabel>Ability Type</FormLabel>
+      <FormLabel focused={false}>Ability Type</FormLabel>
       <RadioGroup
         value={state[optionControlGroup.abilityType]}
         name={optionControlGroup.abilityType}
@@ -107,7 +107,7 @@ const FusionControlPanel = props => {
 
   const cardTypeOption = (
     <FormControl>
-      <FormLabel>Card Type</FormLabel>
+      <FormLabel focused={false}>Card Type</FormLabel>
       <RadioGroup
         value={state[optionControlGroup.cardType]}
         name={optionControlGroup.cardType}
@@ -130,7 +130,7 @@ const FusionControlPanel = props => {
 
   const cardRarityOption = (
     <FormControl>
-      <FormLabel>Card Rarity</FormLabel>
+      <FormLabel focused={false}>Card Rarity</FormLabel>
       <RadioGroup
         value={state[optionControlGroup.cardRarity]}
         name={optionControlGroup.cardRarity}
@@ -155,7 +155,7 @@ const FusionControlPanel = props => {
 
   const fodderTypeOption = (
     <FormControl>
-      <FormLabel>Fodder Type</FormLabel>
+      <FormLabel focused={false}>Fodder Type</FormLabel>
       <RadioGroup
         value={state[optionControlGroup.fodderType]}
         name={optionControlGroup.fodderType}
@@ -180,7 +180,7 @@ const FusionControlPanel = props => {
 
   const fodderRarityOption = (
     <FormControl>
-      <FormLabel>Fodder Rarity</FormLabel>
+      <FormLabel focused={false}>Fodder Rarity</FormLabel>
       <RadioGroup
         value={state[optionControlGroup.fodderRarity]}
         name={optionControlGroup.fodderRarity}

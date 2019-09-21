@@ -19,6 +19,11 @@ const useStyles = makeStyles(theme => ({
   },
   tableTitle: {
     paddingLeft: theme.spacing(2)
+  },
+  rightCaptionContainer: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    paddingTop: theme.spacing(0.5)
   }
 }));
 
@@ -118,7 +123,7 @@ const FusionRateTable = props => {
         <Typography variant="h6" className={classes.tableTitle}>
           Card fusion table
         </Typography>
-        <Table>
+        <Table size="small">
           <TableHead>
             <TableRow>
               <TableCell>Step</TableCell>
@@ -143,7 +148,7 @@ const FusionRateTable = props => {
         <Typography variant="h6" className={classes.tableTitle}>
           Fodder fusion table
         </Typography>
-        <Table>
+        <Table size="small">
           <TableHead>
             <TableRow>
               <TableCell>Step</TableCell>
@@ -163,6 +168,11 @@ const FusionRateTable = props => {
           </TableBody>
         </Table>
       </Paper>
+      <div className={classes.rightCaptionContainer}>
+        <Typography variant="caption" align="right">
+          AL: Ability Level
+        </Typography>
+      </div>
     </div>
   );
 };
