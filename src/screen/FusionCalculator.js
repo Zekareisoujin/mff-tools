@@ -17,7 +17,7 @@ const defaultOptionState = {
   fodderBaseAbilityLevel: 1
 };
 
-const FusionCalc = props => {
+const FusionCalculator = props => {
   const [state, setState] = React.useState({ option: defaultOptionState });
 
   const handleOptionChange = optionState => {
@@ -82,4 +82,4 @@ const FusionCalc = props => {
   );
 };
 
-export default FusionCalc;
+export default FusionCalculator;

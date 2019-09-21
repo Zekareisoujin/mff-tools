@@ -167,7 +167,7 @@ const FusionControlPanel = props => {
           onChange={handleValueChange}
           row
         >
-          {cardOption[state.abilityType][state.cardType].fodderRarity.map(
+          {cardOption[state.abilityType][state.fodderType].fodderRarity.map(
             rarityValue => {
               return (
                 <FormControlLabel

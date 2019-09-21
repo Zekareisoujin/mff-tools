@@ -6,19 +6,19 @@ import {
   Redirect,
   withRouter
 } from 'react-router-dom';
-import FusionCalc from './screen/FusionCalc';
-import WeaponCalc from './screen/WeaponCalc';
+import FusionCalculator from './screen/FusionCalculator';
+import WeaponCalculator from './screen/WeaponCalculator';
 import Header from './component/Header';
 import _ from 'lodash';
 
 const pageList = {
   '/fusion': {
     label: 'Fusion Calculator',
-    component: FusionCalc
+    component: FusionCalculator
   },
   '/weapon': {
     label: 'Weapon Calculator',
-    component: WeaponCalc
+    component: WeaponCalculator
   }
 };
 
