@@ -13,11 +13,11 @@ import _ from 'lodash';
 
 const pageList = {
   '/fusion': {
-    label: 'Fusion Calculator',
+    label: 'Card Fusion',
     component: FusionCalculator
   },
   '/weapon': {
-    label: 'Weapon Calculator',
+    label: 'Weapon Boosting',
     component: WeaponCalculator
   }
 };

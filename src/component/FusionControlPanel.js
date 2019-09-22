@@ -63,21 +63,19 @@ const FusionControlPanel = props => {
     <FormControl>
       <FormLabel focused={false}>Special Options</FormLabel>
       <FormGroup row>
-        {otherOption.map((value, index) => {
-          return (
-            <FormControlLabel
-              label={txtMap[value]}
-              key={index}
-              control={
-                <Checkbox
-                  checked={state[value]}
-                  name={value}
-                  onChange={handleCheckboxChange}
-                />
-              }
-            />
-          );
-        })}
+        {otherOption.map((value, index) => (
+          <FormControlLabel
+            label={txtMap[value]}
+            key={index}
+            control={
+              <Checkbox
+                checked={state[value]}
+                name={value}
+                onChange={handleCheckboxChange}
+              />
+            }
+          />
+        ))}
       </FormGroup>
     </FormControl>
   );

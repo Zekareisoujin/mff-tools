@@ -10,7 +10,7 @@ export default function fusionCalc(params, notGreedy = false) {
     minFodderLevel
   } = params;
 
-  var fodderCost = new Array(minFodderLevel).fill(1),
+  const fodderCost = new Array(minFodderLevel).fill(1),
     fodderFusionTable = [],
     cardFusionTable = [];
 
