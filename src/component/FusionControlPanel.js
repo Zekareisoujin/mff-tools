@@ -59,7 +59,7 @@ const FusionControlPanel = props => {
     handleStateChange(evt.target.name, evt.target.checked);
   };
 
-  const specialOption = (
+  const SpecialOption = props => (
     <FormControl>
       <FormLabel focused={false}>Special Options</FormLabel>
       <FormGroup row>
@@ -82,7 +82,7 @@ const FusionControlPanel = props => {
     </FormControl>
   );
 
-  const abilityTypeOption = (
+  const AbilityTypeOption = props => (
     <FormControl>
       <FormLabel focused={false}>Ability Type</FormLabel>
       <RadioGroup
@@ -105,7 +105,7 @@ const FusionControlPanel = props => {
     </FormControl>
   );
 
-  const cardTypeOption = (
+  const CardTypeOption = props => (
     <FormControl>
       <FormLabel focused={false}>Card Type</FormLabel>
       <RadioGroup
@@ -128,7 +128,7 @@ const FusionControlPanel = props => {
     </FormControl>
   );
 
-  const cardRarityOption = (
+  const CardRarityOption = props => (
     <FormControl>
       <FormLabel focused={false}>Card Rarity</FormLabel>
       <RadioGroup
@@ -153,7 +153,7 @@ const FusionControlPanel = props => {
     </FormControl>
   );
 
-  const fodderTypeOption = (
+  const FodderTypeOption = props => (
     <FormControl>
       <FormLabel focused={false}>Fodder Type</FormLabel>
       <RadioGroup
@@ -178,7 +178,7 @@ const FusionControlPanel = props => {
     </FormControl>
   );
 
-  const fodderRarityOption = (
+  const FodderRarityOption = props => (
     <FormControl>
       <FormLabel focused={false}>Fodder Rarity</FormLabel>
       <RadioGroup
@@ -203,7 +203,7 @@ const FusionControlPanel = props => {
     </FormControl>
   );
 
-  const cardFusionThresholdOption = (
+  const CardFusionThresholdOption = props => (
     <TextField
       label="Minimum card fusion chance"
       value={state[optionControlGroup.cardFusionThreshold]}
@@ -211,6 +211,7 @@ const FusionControlPanel = props => {
       onChange={handleValueChange}
       type="number"
       className={classes.textFieldHalfWidth}
+      variant="outlined"
       InputProps={{
         inputProps: { min: 0, max: 100 },
         endAdornment: <InputAdornment position="end">%</InputAdornment>
@@ -218,7 +219,7 @@ const FusionControlPanel = props => {
     />
   );
 
-  const fodderFusionThresholdOption = (
+  const FodderFusionThresholdOption = props => (
     <TextField
       label="Minimum card fusion chance"
       value={state[optionControlGroup.fodderFusionThreshold]}
@@ -226,6 +227,7 @@ const FusionControlPanel = props => {
       onChange={handleValueChange}
       type="number"
       fullWidth
+      variant="outlined"
       InputProps={{
         inputProps: { min: 0, max: 100 },
         endAdornment: <InputAdornment position="end">%</InputAdornment>
@@ -233,7 +235,7 @@ const FusionControlPanel = props => {
     />
   );
 
-  const fodderBaseAbilityLevelOption = (
+  const FodderBaseAbilityLevelOption = props => (
     <TextField
       label="Fodder base ability level"
       value={state[optionControlGroup.fodderBaseAbilityLevel]}
@@ -241,6 +243,7 @@ const FusionControlPanel = props => {
       onChange={handleValueChange}
       type="number"
       fullWidth
+      variant="outlined"
       InputProps={{ inputProps: { min: 1, max: 3 } }}
     />
   );
@@ -248,31 +251,31 @@ const FusionControlPanel = props => {
     <div className={props.className}>
       <Grid container spacing={1}>
         <Grid item md={7} xs={12}>
-          {specialOption}
+          <SpecialOption />
         </Grid>
         <Grid item md={5} xs={12}>
-          {abilityTypeOption}
+          <AbilityTypeOption />
         </Grid>
         <Grid item md={4} xs={12}>
-          {cardTypeOption}
+          <CardTypeOption />
         </Grid>
         <Grid item md={3} xs={12}>
-          {cardRarityOption}
+          <CardRarityOption />
         </Grid>
         <Grid item md={5} xs={12}>
-          {cardFusionThresholdOption}
+          <CardFusionThresholdOption />
         </Grid>
         <Grid item md={4} xs={12}>
-          {fodderTypeOption}
+          <FodderTypeOption />
         </Grid>
         <Grid item md={3} xs={12}>
-          {fodderRarityOption}
+          <FodderRarityOption />
         </Grid>
         <Grid item md={3} xs={12}>
-          {fodderFusionThresholdOption}
+          <FodderFusionThresholdOption />
         </Grid>
         <Grid item md={2} xs={12}>
-          {fodderBaseAbilityLevelOption}
+          <FodderBaseAbilityLevelOption />
         </Grid>
       </Grid>
     </div>
